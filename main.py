@@ -10,7 +10,7 @@ scroll_page = driver.execute_script("return document.body.scrollHeight")
 button_cookie = driver.find_element(By.CLASS_NAME, 'text-uppercase.css-mz4xnw-Typography-interRegular-buttonSemibold14.e1c33kzw0')
 button_cookie.click()
 i = 0
-while i < 2:
+while i < 10:
     try:
         driver.execute_script("window.scrollTo(0, document.body.scrollHeight);")
         newHeight = driver.execute_script("return document.body.scrollHeight")
@@ -33,8 +33,8 @@ cars = dict()
 for elems in range(len(elements)):
     responce = elements[elems].text.split('\n')
     cars[elems] = responce
-
 driver.close()
+
 f = open('cars1.txt', 'w', encoding="utf-8")
 print(cars)
 for car in cars:
